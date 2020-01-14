@@ -1,10 +1,10 @@
 import * as API from './url';
 
 export const DataFetcher = (callback) => {
-    fetch(API.DataFetcher, {
+    fetch(API.Base_URL, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json",
+            //"Content-Type": "application/json",
             "Accept": "*/*"
         },
         cache: "no-cache"
@@ -15,7 +15,7 @@ export const DataFetcher = (callback) => {
         }
     })
     .then(data => {
-        console.log('Data => '+ data)
+        console.log('Data ====> ', data);
         callback(null, data);
     })
     .catch(err => console.log(err));
