@@ -7,7 +7,7 @@ const InventoryBar = (props) => {
     <ResponsiveBar
         data={data}
         keys={["Amount"]}
-        indexBy= {'Product'}
+        indexBy= { d => JSON.stringify(d)}
         margin={{ top: 0, right: 130, bottom: 80, left: 200 }}
         padding={0.3}
         maxValue={450000000}
@@ -30,9 +30,10 @@ const InventoryBar = (props) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            //tickRotation: 270,
+            // tickRotation: 270,
             legendPosition: 'middle',
-            legendOffset: -40
+            legendOffset: -40,
+            renderTick: CustomTick
         }}
         enableGridX={true}
         enableGridY={false}
@@ -73,3 +74,31 @@ const InventoryBar = (props) => {
     }
 
 export default InventoryBar;
+
+const CustomTick = (tick) => {
+    const value = JSON.parse(tick.value)
+    return (
+        
+        <g transform={`translate(${tick.x},${tick.y})`} >
+            <rect x={-131} y={-31} width={130} height={68} fill="white" stroke="lightgray" strokeWidth="1" />
+            <text
+                transform="rotate(270)"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                // textLength="10px"
+                style={{ fill: '#333', fontSize:11}}
+            >
+                {/* <div>{value.Product}</div> */}
+                <tspan x="0" y="-70" dy="0em" textAnchor="middle" maxWidth="10" style={{ fontWeight: "bold"}}>{value.Product}</tspan>
+                <tspan x="0" y="-67" dy="1.4em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Qty}</tspan>
+            </text>
+            <text
+                textAnchor="middle"
+                dominantBaseline="middle"
+                style={{ fill: '#333', fontSize:11 }}
+            >
+                <tspan x="-32" y="-30" dy="2.8em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Unit}</tspan>
+            </text>
+        </g>
+    )
+}

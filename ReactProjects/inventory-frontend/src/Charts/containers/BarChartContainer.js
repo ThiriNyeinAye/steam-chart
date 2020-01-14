@@ -20,7 +20,7 @@ const BarChartContainer = () => {
 
     return(
         <div className="container">
-            <div style={{width:950, height:600}}>
+            <div style={{width:950, height:800}}>
                 <h3 className="text-center">Inventory Amount</h3>
                   <BarChart data={data}/>
             </div>
