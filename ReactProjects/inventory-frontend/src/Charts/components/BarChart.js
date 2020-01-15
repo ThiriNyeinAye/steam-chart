@@ -9,10 +9,39 @@ const InventoryBar = (props) => {
         data={data}
         keys={["Amount"]}
         indexBy= { Data => JSON.stringify(Data)}
+        tooltip={({ id, value, color,data }) => (
+            <strong style={{ color }}>
+                {/* <div className="d-flex flex-row">
+                    <div className="col-lg-6">
+                        <p>{id} :</p>
+                        <p>Unit :</p>
+                        <p>Qty :</p>
+                        <p>Product :</p>
+                    </div>
+                    <div className="col-lg-6">
+                        <p>{value}</p>
+                        <p>{data.Unit}</p>
+                        <p>{data.Qty}</p>
+                        <p>{data.Product}</p>
+                    </div>
+                </div> */}
+              {id}: {value} <br />
+              Unit:{data.Unit} <br />
+              Quantity:{data.Qty} <br />
+              Product:{data.Product}
+            </strong>
+          )}
+          theme={{
+            tooltip: {
+              container: {
+                // background: "white",
+                 width: 250
+              }
+            }
+          }}
         margin={{ top: 0, right: 130, bottom: 80, left: 200 }}
         padding={0.3}
-        maxValue={450000000}
-        // groupMode="grouped"
+        // maxValue={350000000}
         layout="horizontal"
         colors={{ scheme: 'category10' }}
         // isInteractive={false}
@@ -21,6 +50,7 @@ const InventoryBar = (props) => {
         //         {Product} : {Amount}
         //     </div>
         // }}
+        // tooltip={function(){}}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
         axisTop={null}
         axisRight={null}
@@ -85,7 +115,7 @@ const CustomTick = (tick) => {
     return (
         
         <g transform={`translate(${tick.x},${tick.y})`} >
-            <rect x={-145} y={-31} width={145} height={60} fill="white" stroke="lightgray" strokeWidth="1" />
+            {/* <rect x={-146} y={-31} width={145} height={60} fill="white" stroke="lightgray" strokeWidth="1" /> */}
             <text
                 transform="rotate(270)"
                 textAnchor="middle"
