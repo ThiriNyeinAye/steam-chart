@@ -19,8 +19,8 @@ const BarChartContainer = () => {
   console.log('chartData => ',chartData)
 
     return(
-        <div className="container">
-            <div style={{width:950, height:800}}>
+        <div className="container d-flex justify-content-center">
+            <div style={{width:950, height:700}}>
                 <h3 className="text-center">Inventory Amount</h3>
                   <BarChart data={data}/>
             </div>
