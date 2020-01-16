@@ -15,7 +15,7 @@ export const DataFetcher = (callback) => {
         }
     })
     .then(data => {
-        console.log('Data ====> ', data);
+       // console.log('Data ====> ', data);
         callback(null, data);
     })
     .catch(err => console.log(err));

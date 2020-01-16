@@ -8,7 +8,7 @@ const BarChartContainer = () => {
   const data = chartData;
   const DataFetch = () => {
     DataFetcher((err, data) => {
-      console.log('Data => ',data.payload);
+      //console.log('Data => ',data.payload);
       setChartData(data.payload);
     });
   };
@@ -19,8 +19,8 @@ const BarChartContainer = () => {
   console.log('chartData => ',chartData)
 
     return(
-        <div className="">
-            <div style={{width:1200, height:700}}>
+        <div className="container">
+            <div className="chart" style={{height:700}}>
                 <h3 className="text-center">Inventory Amount</h3>
                   <BarChart data={data}/>
             </div>

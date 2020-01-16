@@ -3,7 +3,14 @@ import { ResponsiveBar } from '@nivo/bar'
 
 const InventoryBar = (props) => {
     const {data} = props;
-    console.log('Data -> ', Data => JSON.stringify(Data));
+    let max =0;
+    data.forEach(cd => {
+        if(cd.Amount > max){
+            max = cd.Amount;
+        }
+    });
+    //console.log('Max -> ',max);
+        
     return(
     <ResponsiveBar
         data={data}
@@ -13,10 +20,10 @@ const InventoryBar = (props) => {
             <strong style={{ color }}>
                 {/* <div className="d-flex flex-row">
                     <div className="col-lg-6">
-                        <p>{id} :</p>
-                        <p>Unit :</p>
-                        <p>Qty :</p>
-                        <p>Product :</p>
+                        <p>{id}</p>
+                        <p>Unit</p>
+                        <p>Qty</p>
+                        <p>Product</p>
                     </div>
                     <div className="col-lg-6">
                         <p>{value}</p>
@@ -34,33 +41,27 @@ const InventoryBar = (props) => {
           theme={{
             tooltip: {
               container: {
-                // background: "white",
-                 width: 250
+                //background: "black",
+               //  width: 250
+               //height: 145
               }
             }
           }}
-        margin={{ top: 0, right: 130, bottom: 80, left: 200 }}
+        margin={{ top: 20, right: 20, bottom: 80, left: 127 }}
         padding={0.3}
-        // maxValue={350000000}
+        maxValue={max+22000000}
         layout="horizontal"
         colors={{ scheme: 'category10' }}
-        // isInteractive={false}
-        // tooltip={({Product,Amount})=>{
-        //     <div>
-        //         {Product} : {Amount}
-        //     </div>
-        // }}
-        // tooltip={function(){}}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
         axisTop={null}
         axisRight={null}
         axisBottom={{
             legendPosition: 'middle',
-            legendOffset: 40,
+            legendOffset: 52,
             orient: 'bottom',
             tickSize: 5,
             tickPadding: 5,
-            tickRotation: 0
+            tickRotation: -40
         }}
         axisLeft={{
             tickSize: 5,
@@ -83,7 +84,7 @@ const InventoryBar = (props) => {
                 direction: 'column',
                 justify: false,
                 translateX: 20,
-                translateY: 60,
+                translateY: 75,
                 itemsSpacing: 2,
                 itemWidth: 120,
                 itemHeight: 20,
@@ -113,10 +114,10 @@ export default InventoryBar;
 const CustomTick = (tick) => {
     const value = JSON.parse(tick.value)
     return (
-        
         <g transform={`translate(${tick.x},${tick.y})`} >
             {/* <rect x={-146} y={-31} width={145} height={60} fill="white" stroke="lightgray" strokeWidth="1" /> */}
             <text
+                className="txtIndex"
                 transform="rotate(270)"
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -131,7 +132,7 @@ const CustomTick = (tick) => {
                 dominantBaseline="middle"
                 style={{ fill: '#333', fontSize:11 }}
             >
-                <tspan x="-57" y="-30" dy="2.8em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Product}</tspan>
+                <tspan x="-53" y="-30" dy="2.8em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Product}</tspan>
             </text>
         </g>
     )
