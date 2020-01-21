@@ -37,21 +37,4 @@
   }
 }
 
-@media (min-width: 540px) {
-  .chart{
-    width: 400px!important;
-    border: 1px solid red!important;
-    background-color: black!important;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 699px){
-  .txtIndex{
-    height: 2em;
-    /* x:"0"; 
-    y="-120" dy="0em" 
-    x:0 */
-  }
-}
-
 

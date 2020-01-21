@@ -18,5 +18,5 @@ export const DataFetcher = (callback) => {
        // console.log('Data ====> ', data);
         callback(null, data);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log('Err -> ',err));
 }

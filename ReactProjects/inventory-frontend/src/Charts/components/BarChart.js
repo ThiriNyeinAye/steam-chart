@@ -18,20 +18,6 @@ const InventoryBar = (props) => {
         indexBy= { Data => JSON.stringify(Data)}
         tooltip={({ id, value, color,data }) => (
             <strong style={{ color }}>
-                {/* <div className="d-flex flex-row">
-                    <div className="col-lg-6">
-                        <p>{id}</p>
-                        <p>Unit</p>
-                        <p>Qty</p>
-                        <p>Product</p>
-                    </div>
-                    <div className="col-lg-6">
-                        <p>{value}</p>
-                        <p>{data.Unit}</p>
-                        <p>{data.Qty}</p>
-                        <p>{data.Product}</p>
-                    </div>
-                </div> */}
               {id}: {value} <br />
               Unit:{data.Unit} <br />
               Quantity:{data.Qty} <br />
@@ -124,15 +110,15 @@ const CustomTick = (tick) => {
                 glyphOrientationVertical="0"
                 style={{ fill: '#333', fontSize:11}}
             >
-                <tspan x="0" y="-120" dy="0em" textAnchor="middle"  style={{ fontWeight: "bold"}}>{value.Qty}</tspan>
-                <tspan x="0" y="-119" dy="1.4em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Unit}</tspan>
+                <tspan x="0" y="-120" dy="0em" textAnchor="middle"  >{value.Qty}</tspan>
+                <tspan x="0" y="-119" dy="1.4em" textAnchor="middle">{value.Unit}</tspan>
             </text>
             <text
                 textAnchor="middle"
                 dominantBaseline="middle"
                 style={{ fill: '#333', fontSize:11 }}
             >
-                <tspan x="-53" y="-30" dy="2.8em" textAnchor="middle" style={{ fontWeight: "bold"}}>{value.Product}</tspan>
+                <tspan x="-53" y="-30" dy="2.8em" textAnchor="middle">{value.Product}</tspan>
             </text>
         </g>
     )
