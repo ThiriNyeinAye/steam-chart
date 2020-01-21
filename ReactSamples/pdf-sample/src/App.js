@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo from './Demo'
+import Demo2 from './Demo2'
 //import PdfTable from './PdfTable'
 import { PDFViewer } from '@react-pdf/renderer';
 
@@ -8,7 +8,7 @@ function App() {
     // <PDFViewer>
     //   <MyDocument />
     // </PDFViewer>
-    <Demo />
+    <Demo2 />
      
   );
 }
