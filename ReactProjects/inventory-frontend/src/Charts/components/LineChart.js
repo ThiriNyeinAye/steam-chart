@@ -13,11 +13,11 @@ const LineChart = ({data,amtValue}) => {
    
     return (
         
-        <div className='' style={{ height: 400, width: 500 }}>
+        <div className='' style={{ height: 500, width: 600 }}>
             {/* <h5 style={{textAlign:'center', marginLeft:'20px', marginTop: '40px', marginBottom: '4px', paddingTop:'5px' }}>Inventory Amount</h5> */}
             <ResponsiveLine
                 data={data}
-                margin={{ top: 20, right:35, bottom: 133, left: 100 }}
+                margin={{ top: 30, right:35, bottom: 153, left: 80 }}
                 xScale={{ type: 'point' }}
                 yScale={{ type: 'linear', min:0, max:`${a}`, stacked: true, reverse: false }}
                 axisTop={null}
@@ -29,7 +29,7 @@ const LineChart = ({data,amtValue}) => {
                     orient: 'bottom',
                     tickSize: 5,
                     tickPadding: 5,
-                    tickRotation: -40,
+                    tickRotation: -50,
 
                 }}
                 axisLeft={{
@@ -52,7 +52,7 @@ const LineChart = ({data,amtValue}) => {
                         direction: 'row',
                         justify: false,
                         translateX: 0,
-                        translateY: 240,
+                        translateY: 290,
                         itemsSpacing: 0,
                         itemDirection: 'left-to-right',
                         itemWidth: 80,
@@ -92,7 +92,13 @@ const LineChart = ({data,amtValue}) => {
                                     
                                     }}
                                 >
-                                   <div className="row">
+                                    <strong>
+                                        Amount : {point.data.y} <br />
+                                        Quantity : {point.data.x[0]} <br />
+                                        Unit : {point.data.x[1]} <br />
+                                        Product : {point.data.x[2]}
+                                    </strong>
+                                   {/* <div className="row">
                                        <div className='col'><strong>Amount</strong></div>
                                        <div className='col'><strong>{point.data.y}</strong></div>
                                    </div>
@@ -107,7 +113,7 @@ const LineChart = ({data,amtValue}) => {
                                    <div className="row">
                                        <div className='col'><strong>Product</strong></div>
                                        <div className='col'><strong>{point.data.x[2]}</strong></div>
-                                   </div>
+                                   </div> */}
                         
                                 </div>
                             ))}

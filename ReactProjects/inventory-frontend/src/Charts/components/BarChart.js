@@ -33,7 +33,7 @@ const InventoryBar = (props) => {
               }
             }
           }}
-        margin={{ top: 20, right: 20, bottom: 80, left: 127 }}
+        margin={{ top: 30, right: 20, bottom: 100, left: 127 }}
         padding={0.3}
         maxValue={max+22000000}
         layout="horizontal"

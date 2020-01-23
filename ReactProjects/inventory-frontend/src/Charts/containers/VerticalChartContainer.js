@@ -20,7 +20,7 @@ console.log("ChartData",chartData);
     },[]);
 
     return(
-        <div style={{ width: 600, height: 400 }}>
+        <div style={{ width: 600, height: 500 }}>
             {/* <h2 className="text-center">Inventory Amount</h2> */}
            <Chart data={data} />
         </div>

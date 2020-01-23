@@ -27,7 +27,11 @@ const MyResponsiveBar = props => {
         indexBy={d => JSON.stringify(d)}
         tooltip={({ id, Unit, value, color,data }) => (
           <strong style={{ color }}>
-            <div className='d-flex flex-row'>
+              {id}: {value} <br />
+              Unit:{data.Unit} <br />
+              Quantity:{data.Qty} <br />
+              Product:{data.Product}
+            {/* <div className='d-flex flex-row'>
               <div className='col'>
                 <p>{id}</p>
                 <p>Unit</p>
@@ -41,7 +45,7 @@ const MyResponsiveBar = props => {
                 <p>{data.Product}</p>
               </div>
               
-            </div>
+            </div> */}
           </strong>
         )}
         theme={{
@@ -52,7 +56,7 @@ const MyResponsiveBar = props => {
             }
           }
         }}
-        margin={{ top: 0, right: 20, bottom: 130, left: 70 }}
+        margin={{ top: 30, right: 20, bottom: 130, left: 70 }}
         padding={0.2}
         colors={{ scheme: "category10" }}
       
@@ -100,13 +104,13 @@ const MyResponsiveBar = props => {
             direction: "column",
             justify: false,
             translateX: 0,
-            translateY: 160,
+            translateY: 140,
             itemsSpacing: 2,
             itemWidth: 100,
             itemHeight: 100,
             itemDirection: "left-to-right",
             itemOpacity: 0.85,
-            symbolSize: 20,
+            symbolSize: 10,
             effects: [
               {
                 on: "hover",
@@ -133,7 +137,7 @@ const CustomTick = tick => {
   // console.log("tick: ", value)
   return (
     <g transform={`translate(${tick.x},${tick.y + 12})`}>
-      <text transform="rotate(-45)">
+      <text transform="rotate(-30)">
       <tspan
           // x="-120"
           y="-5"

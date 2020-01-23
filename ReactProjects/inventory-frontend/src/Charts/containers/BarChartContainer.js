@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BarChart from '../components/BarChart'
 import { DataFetcher } from '../../API/dataFetcher';
-//import { PDFExport } from '@progress/kendo-react-pdf';
 
 const BarChartContainer = props => {
   //pdfExportComponent;
@@ -25,7 +24,7 @@ const BarChartContainer = props => {
 
     return(
         <div>
-            <div style={{ width:500,height: 400}}>
+            <div style={{ width:600, height: 500}}>
                 {/* <h3 className="text-center">Inventory Amount</h3> */}
                   <BarChart data={data}/>
             </div>
