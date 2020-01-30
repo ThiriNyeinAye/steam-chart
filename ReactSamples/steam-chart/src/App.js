@@ -5,13 +5,17 @@ import SplineChart from './Components/SplineChart'
 import CandleStickChart from './Components/CandleStickChart'
 import HighChart from './Components/highChart'
 import CandleChart from './Components/candleChart'
+import SpiderChart from './Components/SpiderChart'
 import './App.css';
 
 const App = () => (
   <div className="container">
-        <CandleStickChart />
+
         <HighChart />
+        <br />
         <CandleChart />
+        <br />
+        <SpiderChart />
         {/* <StockChart />
         <MapChart />
         <SplineChart /> */}

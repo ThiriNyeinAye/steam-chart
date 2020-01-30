@@ -2,6 +2,7 @@ import React from 'react'
 import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
+
     const data =
     
 [
@@ -3731,21 +3732,15 @@ import HighchartsReact from 'highcharts-react-official'
 
 const options = {
     chart: {
-        backgroundColor: {
-            linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-            stops: [
-                [0, '#bdc3c7'],
-                [1, '#20002c']
-            ]
-        },
+        backgroundColor:'#000',
         style: {
             marginBottom: 10
         },
         lineColor : '#000',
         spacingBottom: 15,
         spacingTop: 20,
-        spacingLeft: 30,
-        spacingRight: 45
+        spacingLeft: 40,
+        spacingRight: 30
 
     },
     tooltip: {
@@ -3772,13 +3767,30 @@ const options = {
         {
             labels:{
                 align:'left',
-                x: -1070
+                x: -1050,
+                
+            },
+            title: {
+                text: 'Dollar ($)',
+                style: {
+                    color:'#fff',
+                },
+                x: -40,
+                rotation: -90
             }
         },
         {
             labels:{
                 align:'right',
                 x:4
+            },
+            title: {
+                text: 'Temperature (Â°C)',
+                style: {
+                    color: '#fff'
+                },
+                x:12,
+                rotation: -90
             }
         } 
     ],
@@ -3829,16 +3841,19 @@ const options = {
                 }, 
                 {
                     value:250,
-                    color:'#7cb5ec'
+                    color:'#fff'
                 }, 
                 {
                     value:350,
-                    color:'#90ed7d'
+                    color:'#4dd0e1'
                 },
                 {
-                    color:'#f7a35c'
+                    color:'#ffeb3b'
                 }
-            ]
+            ],
+            tooltip: {
+                valueSuffix : '$'
+            }
         },
       
         {
@@ -3848,7 +3863,10 @@ const options = {
             data: data,
             zones: [{
                 color: '#BFD21C'
-            }]
+            }],
+            tooltip: {
+                valueSuffix : 'Â°C'
+            }
         },
     //    {
     //     data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5,

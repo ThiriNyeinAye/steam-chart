@@ -6172,25 +6172,12 @@ const CandleChart=()=> {
   
   return (
    <div className=''>
-      {/* <div className='d-flex flex-wrap justify-content-center' >
-      <div className='col-lg-12 pt-4'> */}
-        {/* <h2 className='pb-3'>Example....!</h2> */}
+       <h2>Candlestick Chart</h2>
         <HighchartsReact
           highcharts={Highcharts}
           constructorType={"stockChart"}
           options={options}
           />
-    
-      {/* </div> */}
-      {/* <div  className='col-lg-6 pt-4'>
-       <MapData />
-       </div>  */}
-      {/* <div className='col-lg-10 pt-4'>
-        <HighchartSample />
-      </div> */}
-      
-     
-    {/* </div> */}
    </div>
   );
 }
