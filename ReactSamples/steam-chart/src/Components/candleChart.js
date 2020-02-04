@@ -6094,18 +6094,6 @@ const CandleChart=()=> {
         },
       text:'My stock chart'
     },
-    // subtitle:{
-    //   text: 'Hello'
-    // },
-    // caption:{
-    //   text: 'This is a highstocks chart',
-    //   verticalAlign: 'bottom'
-    // },
-    // legend:{
-    //     enabled:true,
-    //     align:'center',
-    //     backgroundColor:'#9ecafb'
-    // },
     lang:{
       resetZoom: 'Reset zoom'
   },
@@ -6138,9 +6126,9 @@ const CandleChart=()=> {
     }],
     series:[
       {
-        type: 'candlestick',
+        type: 'spline',
             data: data,
-            
+            showInNavigator: 'false'
       },
       {
         type: 'column',
@@ -6150,9 +6138,8 @@ const CandleChart=()=> {
         zones: [{
             color: 'white'
         }]
+      },
       
-    }
-    
     ],
     
     responsive:{
@@ -6172,7 +6159,7 @@ const CandleChart=()=> {
   
   return (
    <div className=''>
-       <h2>Candlestick Chart</h2>
+       {/* <h2>Candlestick Chart</h2> */}
         <HighchartsReact
           highcharts={Highcharts}
           constructorType={"stockChart"}

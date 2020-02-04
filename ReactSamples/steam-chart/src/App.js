@@ -6,6 +6,7 @@ import CandleStickChart from './Components/CandleStickChart'
 import HighChart from './Components/highChart'
 import CandleChart from './Components/candleChart'
 import SpiderChart from './Components/SpiderChart'
+import BellCurve from './Components/BellCurve'
 import './App.css';
 
 const App = () => (
@@ -14,8 +15,10 @@ const App = () => (
         <HighChart />
         <br />
         <CandleChart />
-        <br />
-        <SpiderChart />
+        <br /> 
+        {/* <SpiderChart />
+        <br /><br />
+        <BellCurve /> */}
         {/* <StockChart />
         <MapChart />
         <SplineChart /> */}

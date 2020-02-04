@@ -2,15 +2,14 @@ import React from 'react'
 import Highcharts from 'highcharts';
 import HC_more from 'highcharts/highcharts-more'
 import HighchartsReact from 'highcharts-react-official';
-// import 'highcharts-exporting';
-// import 'highcharts-more';
 import '../App.css'
 
 HC_more(Highcharts)
 const options = {
     chart: {
         polar: true,
-        type: 'line'
+        type: 'line',
+        //backgroundColor: '#bf8440'
     },
 
     accessibility: {
@@ -18,7 +17,7 @@ const options = {
     },
 
     title: {
-        text: 'Budget vs spending',
+        text: 'Spider Chart (Budget vs spending)',
         x: -80
     },
 
@@ -81,8 +80,7 @@ const options = {
 
 const SpiderChart = () => {
     return(
-        <div>
-            <h2>Spider Chart</h2>
+        <div className="w-100">
             <figure className="highcharts-figure">
                 <HighchartsReact
                     highcharts={Highcharts}
