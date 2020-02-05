@@ -6049,9 +6049,14 @@ const CandleChart=()=> {
     rangeSelector: {
         selected: 1
     },
+    navigator:{
+        series:
+        {   
+            type: 'column'
+        }
+    },
     chart:{
       styleMode:true,
-      // align: 'center',
       resetZoomButton:{
         theme:{
           zIndex:9
@@ -6128,7 +6133,7 @@ const CandleChart=()=> {
       {
         type: 'spline',
             data: data,
-            showInNavigator: 'false'
+            showInNavigator: true
       },
       {
         type: 'column',

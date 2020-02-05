@@ -137,3 +137,10 @@ font-weight: 600;
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }
+
+.highcharts-color-0 {
+	fill: #000;
+}
+.highcharts-color-1 {
+	fill: #7cb5ec;
+}
