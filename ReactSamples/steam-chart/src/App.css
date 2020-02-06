@@ -1,47 +1,10 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .highcharts-credits{
   display: none!important;
 }
 
-.highcharts-axis-labels text {
+/* .highcharts-axis-labels text {
   fill: #c7ced7!important;
   color: #666666;
   font-size:11px;
@@ -49,20 +12,18 @@
 }
 
 .highcharts-label text {
-  fill:#9aa3ae!important;
-}
-
-/* .highcharts-range-selector-buttons text{
-  fill:#9aa3ae!important;
+  display: none;
 } */
+
+/* 
 .highcharts-label rect {
-  fill:#fff;
+  display: none;
 }
 
 .highcharts-label text {
-  fill: #fff;
-}
-.highcharts-axis-labels text {
+ display: none;
+} */
+/* .highcharts-axis-labels text {
   fill:#000!important;
 }
 .highcharts-legend-item text {
@@ -144,3 +105,7 @@ font-weight: 600;
 .highcharts-color-1 {
 	fill: #7cb5ec;
 }
+
+.my-class1 .highcharts-point{
+  fill:red;
+} */

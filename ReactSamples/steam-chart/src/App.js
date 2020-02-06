@@ -4,6 +4,7 @@ import React from "react";
 // import SplineChart from './Components/SplineChart'
 // import CandleStickChart from './Components/CandleStickChart'
 import HighChart from './Components/highChart'
+import MultiLineChart from './Components/MultiLineChart'
 // import CandleChart from './Components/candleChart'
 // import SpiderChart from './Components/SpiderChart'
 // import BellCurve from './Components/BellCurve'
@@ -13,7 +14,8 @@ const App = () => (
   <div className="container">
 
         <HighChart />
-        <br />
+        <br /><br />
+        <MultiLineChart />
         {/* <CandleChart />
         <br />  */}
         {/* <SpiderChart />
