@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from 'react'
+import HC from 'highcharts'
 import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 import {DataFetcher} from '../API/DataFetcher'
 import moment from'moment';
 import '../App.css'
+
+var SVGRender = HC.SVGRenderer.prototype.symbols.cross = () => {
+    return ['M0,0 V4 L2,2 Z'];
+}
 
 const HighCharts = props => {
     const  [chartData, setChartData] = useState([]);
@@ -28,10 +33,6 @@ const HighCharts = props => {
         (v,i)=> (i===10 || i===30 || i===36 || i===65 || i===77 || i===80)? {value: v[0], color:"#BF0B2399"} : {value:v[0], color:"#B6B6B6"}
     );
     const options = {
-        // time: {
-        //     // timezoneOffset: -8* 60
-        //     timezone: "Asia/Singapore"
-        // },
         rangeSelector: {
           enabled: false 
         },
@@ -39,18 +40,35 @@ const HighCharts = props => {
             enabled: false
         },
         chart: {
+            backgroundColor:'#000',
             style: {
                 marginBottom: 10,
                 color : '#2196f3'
             },
             lineColor : '#2196f3',
-            spacingBottom: 15,
-            spacingTop: 20,
-            spacingLeft: 40,
-            spacingRight: 30,
+            // spacingBottom: 15,
+            // spacingTop: 20,
+            // spacingLeft: 40,
+            // spacingRight: 30,
             zoomType: 'x',
             type: 'area',
             //styledMode: true
+            events: {
+                selection: function (e) {
+                   e.preventDefault();
+                   var axis = this.xAxis[0];
+                   
+                   axis.removePlotBand('selection-plot-band');
+                   
+                   axis.addPlotBand({
+                   	color: Highcharts.color('#335cad').setOpacity(0.25).get(),
+                    from: e.xAxis[0].min,
+                    to: e.xAxis[0].max,
+                    id: 'selection-plot-band',
+                    zIndex: 6
+                   });
+                }
+            },
         },
         tooltip: {
             split: 'true'
@@ -82,10 +100,6 @@ const HighCharts = props => {
             type: 'datetime',
             labels: {
                 format: '{value:%m-%d %H:%M}'
-                // formatter: function(v) {
-                //     console.error('value', this.value);
-                //     return Highcharts.dateFormat('%H:%M:%S', this.value);
-                // }
             },
             plotBands: [{
                 color: '#2196f3',
@@ -93,12 +107,13 @@ const HighCharts = props => {
                 to: 1580949600000,
                 zIndex: 1,
                 borderColor: '#2196f3',
-                borderWidth: 1
+                borderWidth: 1,
+                marker: {
+                    enabled:true,
+                    symbol: 'triangle'
+                }
             }],
         },
-        // global: {
-        //     useUTC: false
-        //   },
         plotOptions: {
             series: {
                 color: '#2196f3',
@@ -117,26 +132,13 @@ const HighCharts = props => {
                 type: 'column',
                 zoneAxis:'x',
                 zones: [...navigatorZoneColor, { color: "#B6B6B6"}]
-                // className:'my-class1',
-                // data: [1580951040000],
-                // nodes:[{
-                //     value:'1580948400000',
-                //     colorIndex:0
-                // }] 
-                
-                // zones: [{
-                //     value:'1580948400000',
-                //     //olorIndex:0
-                //     color: '#BF0B23'
-                // },
-                // // {
-                // //     value:'',
-                // //     colorIndex:1
-                // //     //color:'#B6B6B6'
-                // // }
-                // ],
             },
-           
+            xAxis: {
+                labels:{
+                    enabled: true,
+                    y:12
+                }
+            }
         },
         series: [
             {
@@ -150,11 +152,18 @@ const HighCharts = props => {
                 },
                 turboThreshold:0,
                 
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    width:'100%'
+                }
             }]
+        }
     };
  
     return(
-        <div>
+        <div className='bg-dark'>
             <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={options} />
         </div>
     )

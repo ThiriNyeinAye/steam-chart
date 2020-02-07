@@ -109,3 +109,10 @@ font-weight: 600;
 .my-class1 .highcharts-point{
   fill:red;
 } */
+
+.highcharts-plot-band{
+  fill:red;
+  stroke-width: 1;
+  stroke: #000;
+  /* border-top-color: 1px solid red; */
+}
